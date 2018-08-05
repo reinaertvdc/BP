@@ -1,0 +1,38 @@
+\documentclass[]{report}
+
+\usepackage{biblatex}
+\usepackage[hidelinks]{hyperref}
+\usepackage{import}
+\usepackage[utf8]{inputenc}
+\usepackage{pdfpages}
+\usepackage{todonotes}
+
+\graphicspath{{resources/}}
+
+\addbibresource{main.bib}
+
+\begin{document}
+
+\title{Bachelor Thesis}
+\author{Reinaert Van de Cruys}
+\date{August 2018}
+\maketitle
+
+\include{abstract}
+
+\tableofcontents
+
+\include{chapters/introduction}
+\include{chapters/related_work}
+\include{chapters/exploration}
+\include{chapters/implementation}
+\include{chapters/survey}
+\include{chapters/conclusions}
+
+\printbibliography
+
+\appendix
+
+\include{appendices/exploration}
+
+\end{document}
