@@ -6,19 +6,43 @@ One of the first examples of ubicomp was the now-famous ``Live Wire'' or ``Dangl
 \begin{figure}
     \centering
     \includegraphics[width=0.3\linewidth]{introduction/live_wire.jpg}
-    \caption{A Live Wire hanging from the ceiling \cite{weiser1996designing}}.
+    \caption{A Live Wire hanging from the ceiling (1996) \cite{weiser1996designing}}.
     \label{fig:live_wire}
 \end{figure}
 
 In the years following the conception of ubicomp, research and industry progressed far beyond the point of dangling strings. At the turn of the milennium we saw the emersion of digital clocks that not just display time but also the weather forecast, the room temperature, and other information. Of course, clocks were already a form of ubicomp in and of themselves, continuously telling the time without forcing the user's attention, and weather forecasts were available in a variety of ways. However, having all this information neatly summarized, available at a glance when we get up in the morning, was revolutionary in its own right.
 
-\todo{One more paragraph on ubicomp to explain the current state of the technology, then below talk about the history of AR.}
+The next two decades gradually brought us smart lights, smart thermostats, smartphones, smartwatches, smart toothbrushes and smart toasters. All these devices have some sensors or a network connection with which they try to understand the context in which they're used, so as to better serve and anticipate the user's needs. In recent year, many companies, including Microsoft, Google, Apple, Amazon and Samsung, have all released their own digital assistant. These sophisticated programs can understand spoken natural language to some degree, and they can perform all kinds of tasks, from ordering takeaway to scheduling appointments. We find these assistants on our computers, our smartphones and on smart speakers we can place throughout our houses. No matter where we are, we can now complete many kinds of tasks simply by describing them. Combine this with the fact that we can now buy smart bathroom scales that will communicate with our smartwatches to find out how many calories we burned on a given day and automatically compare this to our change in weight, and we can see that computing is becoming truly ubiquitous.
 
-For decades, a big obstacle, if not \textit{the} biggest one, in the further development of ubicomp, has been hardware capabilities; low power consumption, solid wireless communication and excellent (touch) displays are but some of the requirements for enabling the seamless human-computer interaction that Weiser and others envisioned \cite{weiser1993some}. In recent years, however, these hurdles are being rapidly overcome. The widespread adoption of smartphones, which boast all three of the aforementioned requirements, is perhaps the most striking evidence thereof.
+The recent surge in complex ubicomp devices is no coincidence. For decades, a big obstacle, if not \textit{the} biggest one, in the further development of ubicomp, has been hardware capabilities. Low power consumption, solid wireless communication and excellent (touch) displays are but some of the requirements for enabling the seamless human-computer interaction that Weiser and others envisioned \cite{weiser1993some}. In recent years, these hurdles are being rapidly overcome. The widespread adoption of smartphones, which boast all three of the aforementioned requirements, is perhaps the most striking evidence thereof.
 
-With hardware limitations diminishing, other ubicomp challenges are becoming more prominent. Some current open research questions concern \textbf{intelligibility}, or how to make computer systems easy to understand, and visibility, or how to make users aware of the presence of these systems \cite{vermeulen2009bet,vermeulen2013intelligibility}. The fact that computers being too small to see is now a concern, goes to show just how much progress has been made.
+Development of a technology and research into its possible applications often go hand in hand, since the latter has little use without the former, and the former will create demand for the latter. With hardware limitations diminishing, other ubicomp challenges are becoming more prominent. Some current open research questions concern \textbf{intelligibility}, or how to make computer systems easy to understand, and visibility, or how to make users aware of the presence of these systems \cite{vermeulen2009bet,vermeulen2013intelligibility}. The fact that computers being too small to see is now a concern, goes to show just how much progress has been made.
 
 The solution to the usability problems of ubicomp might, somewhat counterintuitively, be to hide the computer entirely. The idea behind virtual reality (VR) and augmented reality (\textbf{AR}) is for the computer to become completely invisible by taking control of the user's sensory input, which at the same time would allow it to communicate using any combination of visual, auditory and other signals \cite{rheingold1991virtual}. As such, the computer would be able to convey information intuitively and with any degree of intrusiveness, making the approach excellent for implementing the ubicomp ideals \cite{weiser1993some}.
+
+A minimal VR prototype is technologically simpler than a minimal AR prototype, since VR requires ``only'' a (stereoscopic) display, a way to track the user's orientation, and a rendering engine to create the virtual world. AR requires these same capabilities, plus an internal model of the environment and a way to overlay images on a view of the real world, like a live camera feed or a semi-transparent display. Additionally, AR is more sensitive to processing delays and inaccurate sensors, since these can cause offsets between the world view and the virtual overlay. In VR, such offsets cannot exist, so tracking delays and errors are generally less noticeable. It is not surprising then that VR is the historic predecessor to AR, and that development of the two technologies has often been intertwined.
+
+Ivan Sutherland, a famous computer graphics pioneer, published his vision of the Ultimate Display in 1965 \cite{sutherland1965ultimate}. He argued that conventional computers are limited in their functionality by their use of the user's senses and by their input methods. Conventional computers use a screen that only partially occupies user's vision, sometimes complemented with sound, and the other senses typically are left untouched. Input is registered via keyboard, joystick, or a similar device. The ultimate display would be a system that takes full control over all the user's senses, and that could register every slight movement of the user's body. It could then create any conceivable experience for the user and adapt to their every motion. Experiences in this display would not even be limited by the laws of physics, since the display could simulate phenomena like negative gravity or materials not found in the real world. What Ivan Sutherland envisioned might now be called the ultimate VR system, or the ultimate AR system when complemented with spatial awareness.
+
+The Sword of Damocles \cite{sutherland1968head}, shown in Figure \ref{fig:sword_of_damocles}, was developed mainly by Ivan Sutherland in 1968 and is widely considered to be the first functional VR setup. The system used a heavy HMD (head-mounted display) that had to remain attached to bars above the user's head, which is also where the name comes from. The system could track the user's head rotation, allowing them to look around in the virtual world, and even allowed for some small movement. Limited processing power meant the virtual world consisted of simple wireframe figures, however these were sufficient to prove the system functional.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1.0\linewidth]{resources/introduction/sword_of_damocles.jpg}
+    \caption{The Sword of Damocles (1968) \cite{sutherland1968head}}.
+    \label{fig:sword_of_damocles}
+\end{figure}
+
+\cite{rosenberg1992use}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1.0\linewidth]{resources/introduction/virtual_fixtures.jpg}
+    \caption{Virtual Fixtures (1992) \cite{sutherland1968head}}.
+    \label{fig:virtual_fixtures}
+\end{figure}
+
+\todo{Talk about the history of AR.}
 
 Another challenge in ubicomp concerns the fact that, while actions in virtual environments are often reversible, the real world is much less forgiving. For this reason, it's essential to inform users of what actions will achieve which effect in a process called \textbf{feedforward} \cite{djajadiningrat2002but}. While the notion of feedforward is both powerful and important, much research on the topic remains to be done \cite{vermeulen2013crossing}.
 
