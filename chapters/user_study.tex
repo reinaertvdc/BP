@@ -1,0 +1,70 @@
+\chapter{User Study} \label{chap:user}
+
+\subsection{Procedure} \label{subsec:user:survey:procedure}
+Each participant was received separately, with only the observer present. The participants were explained that the goal of the experiment was to evaluate various AR visualizations. While wearing the HoloLens, they would be asked six times to match light switches to corresponding lights, each time using a different visualization. They would be asked to think aloud as much as possible, and after each task, they would would answer some questions.
+
+The participants were given some time to adjust the HoloLens straps and get familiar with the device. Then they were asked to look around and confirm they could see virtual overlays on nearby lamps and switches. Next, they were given the clicker and asked to select a switch by gazing at it and clicking, and to confirm that it turned red. After each of these steps were completed, we were confident that the system was working correctly and that the participant understood how to use it.
+
+For each visualization, we told the participant the same words: "Please select a switch, say which one you chose, then show which lights you believe are connected to it. Please try to think aloud as you decide.". We would note the participant's answer and whether it was correct. After each visualization, we asked the participant the same six questions, to which they had to answer on a 1-5 scale:
+\begin{enumerate}
+  \item How certain are you that the switches work the way you indicated?
+  \item How ... do you find the visualization?
+  \begin{enumerate}
+    \item easy to learn
+    \item fast to work with
+    \item resistant to errors
+    \item useful
+    \item enjoyable
+  \end{enumerate}
+\end{enumerate}
+
+These questions were intended as starting points for conversation, rather than quantitative measurements for statistical analysis, given the limited number of participants. We would ask the participants for the reasoning behind their scores, and if they saw ways to improve the visualizations. Throughout the entire process, we would note any interesting quotes, and also the participant's general behaviour for each visualization, like whether there were long periods of hesitation. After two or three visualizations, we would switch rooms, to introduce some variety and to avoid reusing switches.
+
+Each participant received the same six visualizations, with slight variations in the order:
+\begin{enumerate}
+  \item World highlights
+  \item Minimap highlights
+  \item Arrows
+  \item Halo's
+  \item Combo (minimap highlights combined with arrows or halo's)
+  \item Colors
+\end{enumerate}
+
+All participants started with the world highlights, which simply change the overlay color of lights from white to red. We considered them the most basic and recognizable visualization, since it has exactly the same effect as actually turning the lights on, but with the downside that the visualization does not radiate light from activated lamps, so users must look straight at them to be able to find them. With a total lack of overview and guidance, we did not consider this visualization an actual contender, at least not by itself. Rather, it was intended as a warm-up, and as a way of giving each participant the same reference point to compare the next visualizations to.
+
+The second visualization for each participant was the minimap highlights, which showed a map of the participant's environment, on which lights would be highlighted in red, in the bottom right corner of their view. In contrast to the previous visualization, the minimap highlights do not require any head movement at all, once the user is acquainted with the environment. We placed this visualization second because maps are again a familiar concept that participants will be used to working with.
+
+The third and fourth visualizations were the directional indicators. Half of the participants used the arrows first, the other half started with the halo's, so as to distribute the learning effect that these similar visualizations may have on each other. We followed up with the combo visualization, which is the minimap highlights combined with whichever of the two directional indicators the participant preferred. With this composite visualization, the participant had multiple ways of finding the correct lights, and we payed careful attention to which way they chose. This let us see how well their stated opinions and their actions lined up. We discussed with the participants whether the visualizations complemented each other, and we asked if they could think of better combinations.
+
+The sixth last visualization for each participant were the colors. This visualization was placed last, because it functioned differently than the others, in the sense that no switch had to be selected. All circuits would be shown at once, each in their own color, both in the world and on the minimap. We pointed to several switches in quick succession and asked the participants to indicate the correct lights for each one. Each time we observed carefully whether the participants looked around, used the minimap, or both, and in what order. We finished with an open-ended discussion where we asked the participant's opinion of the entire concept and asked if they had any more insights to share.
+
+\subsection{Apparatus} \label{subsec:user:survey:apparatus}
+Participants wore a HoloLens for the duration of the test, which was about 25 minutes. They used the accompanying clicker to select switches. The environment consisted of two office rooms with the adjacent hallway, and had 8 switches and 22 lights in total.
+
+\subsection{Participants} \label{subsec:user:survey:participants}
+There were 7 unpaid male participants, 6 researchers and 1 student. All participants were familiar with the test environment, but none knew the corresponding lights for any specific switch in advance.
+
+\section{Results} \label{sec:user:results}
+- Show data, give quotes
+
+\section{Discussion} \label{sec:user:discussion}
+- everyone is confident with every visualization
+
+- nobody made wrong links, but two people missed a light once when using the highlight (and they were confident of their answers)
+
+- everyone loves the minimap, several mention the luxury of not having to move their head. One person said they didn't prefer the minimap, but kept using it, and later changed their opinion.
+
+- Arrows are more popular than halo's, several argue they are less cluttering
+
+- user suggestions: make map larger, replace triangles with arrows
+
+- ...
+
+\section{Conclusions} \label{sec:user:discussion}
+- all visualizations work well, except for simple highlight, which is as we suspected (and hoped)
+
+- minimap + colors + highlight seems generally the best choice, especially in simple scenarios
+
+- arrows and halo's might work better in more complex and larger scenario's, where a minimap becomes to crowded, as is also suggested by several users
+
+- name user suggestions as possible improvements
