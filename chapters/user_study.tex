@@ -58,32 +58,30 @@ For the \textbf{world highlights}, we observed all participants slowly looking a
 
 For the \textbf{minimap highlights}, the minimap was not immediately noticed by one participant, who started looking around the room again. Two others saw the map but took some time to understand what it was. The remaining four participants gave the correct answer within seconds, and without looking up to do so, they simply pointed behind their backs. After realizing how the visualization worked, the other three were also quick to answer. Once having responded, four participants tried to confirm their answer by looking up to the lights as they had done previously, but of course there was nothing to see this time around. Six participants found the visualization very \textit{easy to learn}, but one described it as ``... harder than the other one.''. The criteria \textit{fast to work with} and \textit{resistant to errors} again received strong affirmation from all but one participant, who noted ``I think it's weird that part of the room is cut off, that feels like a bug. Some lights are almost cut away, ... but I can see the lights in the room next door, and those are not relevant.'' and ``The map is good for technical people, who are used to working with ground plans, I as an ordinary person don't have much experience with top-down views.".
 
-Between the two directional indicators, six participants preferred the \textbf{arrows}, and one preferred the \textbf{halo's}. The general opinion is well described by this earlier mentioned quote, saying the halo's are ``... less precise because of the overlap. I prefer the arrows, those are more precise, smaller, they don't overlap as much.''. The one participant who preferred the halo's argued they found the concept more familiar. 
+Between the two directional indicators, five participants preferred the \textbf{arrows}, and two preferred the \textbf{halo's}. The general opinion is well described by this earlier mentioned quote, saying the halo's are ``... less precise because of the overlap. I prefer the arrows, those are more precise, smaller, they don't overlap as much.''. The two participants who preferred the halo's meanwhile argued they found the concept more familiar, and that in the arrows visualization, the purpose of what appeared to be half-open rectangles in the peripheral vision was not immediately clear. Opinions on all five criteria were mixed in both cases. One participant rated everything 4 or 5, while another maxed out at 3. We observed how four of the seven participants were initially confused by the visualizations, especially those who started with the halo's. In one extreme case, a participant who received the halo's first, needed multiple minutes before figuring out how the visualization worked. They described it as ``... randomly appearing lines, kind of a peripheral indication. I thought they were a representation of cables, that they were on the walls. After you understand it, it's still messy.'' They later nuanced their statement by putting some blame on the small rendering window of the HoloLens, and on implementation details, like the rate at which the circles expand and contract.
 
+For the combo visualization, we observed every single participant answering using only the map. Two participants looked up after giving their answer to confirm what they had said, the other five didn't feel the need to do so, including the participant who earlier stated they found the map better suited for more technical people, and who gave the directional indicators only 4's and 5's. When asked how they would improve the combination, two participants wanted to remove the directional indicators, three suggested to make them optional, and the remaining two wanted to replace them with world highlights. All wanted to keep the minimap highlights.
 
+Finally, for the colors visualization, where we asked to match several circuits that we pointed to in quick succession, all participants answered nearly instantaneously, and all used the map exclusively. When we pointed through the walls to switches in other rooms, the participants would still use the minimap if the lights fell within its range. Only when we purposefully pointed to a circuit outside the range of the minimap, did the participants look at the actual lights to determine their color. Even then, two participants felt the urge to walk up to the lights to get them in range of the minimap so they could confirm their answer. They said before doing so that they were confident of their answer, but they still wanted to verify it with the map. When we brought up this tendency to use the minimap with the participant who claimed the map was better for the technically inclined, they said they changed their opinion, and that they themselves now preferred the map, although they suspected directional indicators might still be helpful for beginners.
 
-- nog steeds mikken en klikken
-- note how participants indicate certainty of their answers, but give average scores on "resistant to errors"
-- problem with depth, flickering, halo lines should be thinner, replace triangles with actual arrows, indicators disappear and lights turn red when in view
+In our final open-ended discussion, all participants said the colors visualization was their favorite. An important reason for this that was repeatedly mentioned, was the fact that selection of switches was not needed when using the colors. Participants could answer all the questions without moving a finger. However, it was also repeatedly mentioned that they expected the colors to work less well in large or complex environments. Five of the seven participants could see themselves use the directional indicators in certain scenarios, specifically in ones with lights that are far away, so the minimap doesn't work as well, and where the lights spread out, so the indicators do not overlap too much.
 
-\section{Discussion} \label{sec:user:discussion}
-- everyone is confident with every visualization
+\section{Discussion \& Conclusions} \label{sec:user:disc_conc}
+Colors in both the real world and in the minimap appears to be an excellent general solution, since all participants liked it, were quick to pick it up, and could use it to work fast and without mistakes. When too many circuits are present to assign each of them a color, a combination of map highlights and and world highlights may work best. Then, the minimap can be used to locate the correct lights, and their redness allows the user to verify their assessment. When lights are really far away or spread out in different directions, directional indicators may be an effective tool for guiding the user's vision, or even for giving them a general sense of the layout.
 
-- nobody made wrong links, but two people missed a light once when using the highlight (and they were confident of their answers)
+The participants proposed many improvements, especially for the directional indicators:
+\begin{enumerate}
+  \item Aiming at a switch and clicking is a bit cumbersome, ideally the user could scroll through the switches very quickly.
+  \item Halo's might be clearer if their lines were thinner.
+  \item Some participants experienced flickering or problems with depth vision, which may have inhibited the use of the visualizations.
+  \item The arrows would be better if they used actual arrows, which remained completely within the user's vision, stuck to the periphery.
+  \item Directional indicators should be replaced by world highlights once completely in sight.
+  \item Halo's and arrows seem to grow too quickly, causing everything outside the user's vision to appear about the same distance away.
+  \item The minimap can be a lot larger, it is no problem if it takes up a quarter or a third of the view, since it is transparent anyway.
+  \item Users should be able to turn visualizations on and off at will.
+  \item The minimap should zoom and/or shift so as to always encompass the current room or the currently selected circuit. The minimap could even pan away to far off lights, as long as this is done with the right animations, so that the user understands what is happening.
+  \item When a circuit is selected, there should be an indication somewhere of how many lights in total are connected.
+  \item If the user gazes over all selected lights, but misses one, the system could alert the user to this fact.
+\end{enumerate}
 
-- everyone loves the minimap, several mention the luxury of not having to move their head. One person said they didn't prefer the minimap, but kept using it, and later changed their opinion.
-
-- Arrows are more popular than halo's, several argue they are less cluttering
-
-- user suggestions: make map larger, replace triangles with arrows
-
-- ...
-
-\section{Conclusions} \label{sec:user:conclusions}
-- all visualizations work well, except for simple highlight, which is as we suspected (and hoped)
-
-- minimap + colors + highlight seems generally the best choice, especially in simple scenarios
-
-- arrows and halo's might work better in more complex and larger scenario's, where a minimap becomes to crowded, as is also suggested by several users
-
-- name user suggestions as possible improvements
+By implementing and evaluating these suggested improvements, we believe the effectiveness and the user-friendliness of our visualizations could be much improved. Especially the directional indicators currently appear to suffer from technical hamperings. Still, despite our prototype implementation, the participants were enthusiastic about its potential, and often spontaneously proposed ways to improve the system.
