@@ -1,6 +1,9 @@
 \chapter{User Study} \label{chap:user}
 
-\subsection{Procedure} \label{subsec:user:survey:procedure}
+\section{Introduction} \label{sec:user:survey:intro}
+In the previous chapter, we created a HoloLens application to try out the most promising of our visualizations from the online survey in a more high-fidelity setting. In this chapter, we report how we use the application to conduct an informal user study. We have seven participants try out a range of visualizations, and we collect data by observing the participant's actions and by walking them through a prepared questionnaire. At the and of this chapter, we update our earlier insights based on this newly gathered information.
+
+\section{Procedure} \label{sec:user:survey:procedure}
 Each participant was received separately, with only the observer present. The participants were explained that the goal of the experiment was to evaluate various AR visualizations. While wearing the HoloLens, they would be asked six times to match light switches to corresponding lights, each time using a different visualization. They would be asked to think aloud as much as possible, and after each task, they would would answer some questions.
 
 The participants were given some time to adjust the HoloLens straps and get familiar with the device. Then they were asked to look around and confirm they could see virtual overlays on nearby lamps and switches. Next, they were given the clicker and asked to select a switch by gazing at it and clicking, and to confirm that it turned red. After each of these steps were completed, we were confident that the system was working correctly and that the participant understood how to use it.
@@ -18,7 +21,7 @@ For each visualization, we told the participant the same words: "Please select a
   \end{enumerate}
 \end{enumerate}
 
-We considered the first question to be clear, but for the next five, we gave the following clarification: "Please consider physically turning the lights on a 3 on our 1-5 scale. Giving a visualization a 1 or a 2 means you consider it worse than trying the switches by hand to discover which lights are connected, giving it a 4 or 5 means you consider the visualization to be better." These questions were intended as starting points for conversation, rather than quantitative measurements for statistical analysis, given the limited number of participants. We would ask the participants for the reasoning behind their scores, and if they saw ways to improve the visualizations. Throughout the entire process, we would note any interesting quotes, and also the participant's general behaviour for each visualization, like whether there were long periods of hesitation. After two or three visualizations, we would switch rooms, to introduce some variety and to avoid reusing switches.
+The questions were intended as starting points for conversation, rather than quantitative measurements for statistical analysis, given the limited number of participants. We would ask the participants for the reasoning behind their scores, and if they saw ways to improve the visualizations. Throughout the entire process, we would note any interesting quotes, and also the participant's general behaviour for each visualization, like whether there were long periods of hesitation. After two or three visualizations, we would switch rooms, to introduce some variety and to avoid reusing switches.
 
 Each participant received the same six visualizations, with slight variations in the order:
 \begin{enumerate}
@@ -38,10 +41,10 @@ The third and fourth visualizations were the directional indicators. Half of the
 
 The sixth last visualization for each participant were the \textbf{colors}. This visualization was placed last, because it functioned differently than the others, in the sense that no switch had to be selected. All circuits would be shown at once, each in their own color, both in the world and on the minimap. We pointed to several switches in quick succession and asked the participants to indicate the correct lights for each one. Each time we observed carefully whether the participants looked around, used the minimap, or both, and in what order. We finished with an open-ended discussion where we asked the participant's opinion of the entire concept and asked if they had any more insights to share.
 
-\subsection{Apparatus} \label{subsec:user:survey:apparatus}
+\section{Apparatus} \label{sec:user:survey:apparatus}
 Participants wore a HoloLens for the duration of the test, which was about 25 minutes. They used the accompanying clicker to select switches. The environment consisted of two office rooms with the adjacent hallway, and had 8 switches and 22 lights in total.
 
-\subsection{Participants} \label{subsec:user:survey:participants}
+\section{Participants} \label{sec:user:survey:participants}
 There were 7 unpaid male participants, 6 researchers and 1 student. All participants were familiar with the test environment, but none knew the corresponding lights for any specific switch in advance.
 
 \section{Results} \label{sec:user:results}
@@ -53,15 +56,15 @@ Before going through the results of each visualizations, we believe it best to p
 
 For the \textbf{world highlights}, we observed all participants slowly looking around the room, until they came across the first red highlight, then quickly catching on and finding the other lights. All participants took 5-15 seconds to give their answer, and all described their thought process along the lines of ``I look around, I see red lights, the switch is also red, so these must belong together.''. The participants unanimously agreed the visualization was \textit{easy to learn}, but four participants had second thoughts on them being \textit{fast to work with} or \textit{resistant to errors}, stating that the visualization is ``... just as fast as simply trying out the switches.'' and that ``I can see myself miss a light from time to time.''.
 
-The \textbf{minimap highlights} was not immediately noticed by one participant, who started looking around the room again. Two others saw the map but took some time to understand what it was. The remaining four participants gave the correct answer within seconds, and without looking up to do so, they just pointed behind their backs. After realizing how the visualization worked, the other three were also quick to answer. Once having responded, four participants tried to confirm their answer by looking up to the lights as they had done previously, but of course there was nothing to see this time around. Six participants found the visualization very \textit{easy to learn}, but one described it as ``... harder than the other one.''. The criteria \textit{fast to work with} and \textit{resistant to errors} again received strong affirmation from all but one participant, who noted ``I think it's weird that part of the room is cut off, that feels like a bug. Some lights are almost cut away, ... but I can see the lights in the room next door, and those are not relevant.'' and ``The map is good for technical people, who are used to working with ground plans, I as an ordinary person don't have much experience with topdown views.".
+For the \textbf{minimap highlights}, the minimap was not immediately noticed by one participant, who started looking around the room again. Two others saw the map but took some time to understand what it was. The remaining four participants gave the correct answer within seconds, and without looking up to do so, they simply pointed behind their backs. After realizing how the visualization worked, the other three were also quick to answer. Once having responded, four participants tried to confirm their answer by looking up to the lights as they had done previously, but of course there was nothing to see this time around. Six participants found the visualization very \textit{easy to learn}, but one described it as ``... harder than the other one.''. The criteria \textit{fast to work with} and \textit{resistant to errors} again received strong affirmation from all but one participant, who noted ``I think it's weird that part of the room is cut off, that feels like a bug. Some lights are almost cut away, ... but I can see the lights in the room next door, and those are not relevant.'' and ``The map is good for technical people, who are used to working with ground plans, I as an ordinary person don't have much experience with top-down views.".
 
-Out of the two directional indicators, six participants preferred the \textbf{arrows}, and one the \textbf{halo's}.
+Between the two directional indicators, six participants preferred the \textbf{arrows}, and one preferred the \textbf{halo's}. The general opinion is well described by this earlier mentioned quote, saying the halo's are ``... less precise because of the overlap. I prefer the arrows, those are more precise, smaller, they don't overlap as much.''. The one participant who preferred the halo's argued they found the concept more familiar. 
 
 
 
 - nog steeds mikken en klikken
 - note how participants indicate certainty of their answers, but give average scores on "resistant to errors"
-- problem with depth, flickering, halo lines should be thinner
+- problem with depth, flickering, halo lines should be thinner, replace triangles with actual arrows, indicators disappear and lights turn red when in view
 
 \section{Discussion} \label{sec:user:discussion}
 - everyone is confident with every visualization
