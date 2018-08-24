@@ -1,13 +1,55 @@
 \chapter{Related Work} \label{chap:relat}
-\todo{Nothing yet changed here.}
+This chapter is the start of our research and describes our literature study of ubicomp, AR and feedforward. We provide context by discussing both history and current work. Our focus, however, is on interaction techniques combining two or all of the aforementioned concepts, since we will be designing such interaction techniques ourselves in the next chapter, as part of our exploration of the design space.
 
-Thorough experimentation with AR and ubicomp has only been possible in the last two decades or so, due to technological constraints. The first study concerning feedforward was published even more recently, in \citeyear{djajadiningrat2002but} \cite{djajadiningrat2002but}, and the topic hasn't so far been extensively researched \cite{vermeulen2013crossing}. For these reasons, literature combining AR, ubicomp and feedforward is still scarce (a notable exception is \cite{vermeulen2009bet}). However, there is a moderate set of publications that combine at least two of the topics, or that bring forth some relevant technique. Following is a discussion of selected works.
+\section{History of AR} \label{sec:relat:ar}
+A minimal VR prototype is technologically simpler than a minimal AR prototype, since VR requires ``only'' a (stereoscopic) display, a way to track the user's orientation, and a rendering engine to create the virtual world. AR requires these same capabilities, plus an internal model of the environment and a way to overlay images on a view of the real world, like a live camera feed or a semi-transparent display. Additionally, AR is more sensitive to processing delays and inaccurate sensors, since these can cause offsets between the world view and the virtual overlay. In VR, such offsets do not exist, so tracking delays and errors are generally less noticeable. It is not surprising then that VR is the historic predecessor to AR, and that because of their similarities, development of the two technologies has often been intertwined.
 
-\section{Feedforward} \label{sec:related_work:feedforward}
-\todo{Discuss the different views on feedforward, as given by \citeauthor{djajadiningrat2002but} \cite{djajadiningrat2002but}, \citeauthor{wensveen2004interaction} \cite{wensveen2004interaction} and \citeauthor{vermeulen2013crossing} \cite{vermeulen2013crossing}. A good comparison has previously been made by \citeauthor{chueke2016perceptible} \cite{chueke2016perceptible}. Also missing \cite{djajadiningrat2004tangible} and \cite{norman2013design}.}
+Ivan Sutherland, named by many as the father of computer graphics, published his vision of the Ultimate Display in 1965 \cite{sutherland1965ultimate}. He pointed out that conventional computers use a screen that only partially occupies user's vision, sometimes complemented with sound, and that other senses typically are left untouched. Input is registered via keyboard, joystick, or a similar device. Sutherland argued that these approaches severely limit our interaction methods, and therefore the ways in which computers can be used. The ultimate display would be a system that takes full control over all of the user's senses, and that could register every slight movement of the user's body. It could then create any conceivable experience for the user and adapt to their every motion. Experiences in this display would not even be limited by the laws of physics, since the display could simulate concepts like negative gravity or materials not found in the real world. What Sutherland envisioned, we might now call the ultimate VR system, or the ultimate AR system when complemented with knowledge of the real world.
 
-\section{Gesture-based Commands} \label{sec:related_work:gesture-based_commands}
-\todo{Iets meer introduceren dat je het over gestures zal hebben.}
+The Sword of Damocles \cite{sutherland1968head}, shown in Figure \ref{fig:sword_of_damocles}, was developed mainly by Ivan Sutherland in 1968 and is widely considered to be the first functional VR setup. The system used a heavy HMD (head-mounted display) that had to remain attached to bars above the user's head, which is also where the name comes from. The system could track the user's head rotation, allowing them to look around in the virtual world, and even allowed for some small movement. Limited processing power meant the virtual world consisted of simple wireframe figures, however these were sufficient to prove the system functional.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1.0\linewidth]{resources/introduction/sword_of_damocles.jpg}
+    \caption{The Sword of Damocles (1968) \cite{sutherland1968head}.}
+    \label{fig:sword_of_damocles}
+\end{figure}
+
+The first true AR system was introduced nearly 25 years after the Sword of Damocles. In 1992, Louis Rosenberg developed virtual fixtures for the U.S. Air Force \cite{rosenberg1992use}. The system was designed for assisting in remotely manipulated tasks, like operating a robotic arm or driving a remote-controlled vehicle, possibly without direct line of sight with the device in question. To use the system, the user wears a HUD and a full upper-body exoskeleton. The HUD provides a live camera feed of the task being performed, and the user's arm movements are relayed to the device for control. In case of the robotic arm, the camera position and orientation continually line up so that the robotic arm appears in place of the user's real arm. The robotic arm then mimics the user's arm movements, letting the user work like the task were performed in person rather than remotely.
+
+To assist in task execution, Rosenberg's system introduces virtual fixtures, which are sensory overlays that guide the user towards the desired actions. Specifically, the exoskeleton can resist the user's actions with varying degrees of force, nudging them towards the desired movements. We distinguish \textit{guiding virtual fixtures}, which exert limited force that can be overcome by the user, and \textit{forbidden regions virtual fixtures}, which prevent the user from making some movements. The latter can simulate an invisible wall that a robotic arm cannot move through or a remote-controlled vehicle cannot not drive past, and can for example be used for safety restrictions. However, virtual fixtures as proposed by Rosenberg are not limited to guiding the user's movements, and neither do they have to be haptic. Their general goal is to improve user awareness and localization. This can also be achieved via visual cues, like rendering the haptic ``force fields'' in the user's view, and via auditory cues, like a buzzing sound that becomes more urgent the more the user deviates from the ideal path. Rosenberg's study showed that a simple combination of haptic and auditory virtual fixtures increase user performance by up to 70\% in remote tasks, like using a robotic arm to place pegs in specific holes.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{resources/introduction/virtual_fixtures.jpg}
+    \caption{Virtual Fixtures (1992) \cite{sutherland1968head}.}
+    \label{fig:virtual_fixtures}
+\end{figure}
+
+The rest of the 90s and the 00s brought a large variety of AR applications, and not all of them used HMD's. The aviation and automotive industries developed HUD's (head-up display) projecting navigational aids and system information over the windshield. Several companies developed apps that can translate text on the fly when viewed through a smartphone. In 2013, Google released their Google Glass, which is voice-controlled and can display information in the user's peripheral vision. In 2016, Microsoft brought their HoloLens to market, a HMD with spatial awareness and a transparent display that it uses to place virtual interactive objects, which they call \textit{holograms}, in the real world. Since then, the number of AR devices has started to grow more quickly, but as mentioned in Chapter \ref{chap:intro}, they are still mostly targeted at professionals.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{resources/introduction/hololens.jpg}
+    \caption{Microsoft HoloLens (2016).}
+    \label{fig:hololens}
+\end{figure}
+
+\section{Feedforward} \label{sec:relat:feedforward}
+Feedforward, as mentioned in Chapter \ref{chap:intro}, is the process of telling the user what is going to happen if they proceed with an action. This is different from Norman's \textit{affordances} \cite{norman2013design}, which show only the potential for an action, without conveying its possible effects \cite{chueke2016perceptible}.
+
+\citeauthor{djajadiningrat2002but} (\citeyear{djajadiningrat2002but}) argue that ``both appearance and action are carriers of meaning'' \cite{djajadiningrat2002but}, or in other words, a UI element can express its purpose both via its appearence and via its available actions.
+
+\todo{Discuss the different views on feedforward, as given by
+
+\citeauthor{djajadiningrat2002but} \cite{djajadiningrat2002but}, \citeauthor{wensveen2004interaction} \cite{wensveen2004interaction}
+\citeauthor{vermeulen2013crossing} \cite{vermeulen2013crossing}.
+
+A good comparison has previously been made by \citeauthor{chueke2016perceptible} \cite{chueke2016perceptible}. Also missing \cite{djajadiningrat2004tangible}.}
+
+\section{Gesture-based Commands} \label{sec:relat:gesture-based_commands}
+In ubicomp environments, the user should be able to interact with the system in a way that feels natural, and preferably they are able to move around freely while doing so. Gesture-based commands allow the user to describe their intention with motions, which may be more convenient than pressing buttons in some cases, and mid-air gestures do not lock the user in place. We will now discuss some earlier works on gesture-based commands and their possible advantages.
+
 \textbf{OctoPocus} explores the use of feedforward in on-screen gesture-based commands \cite{bau2008octopocus}. When the user initiates a command, for each possible gesture a labeled path radiates from the cursor, giving the user feedforward by telling them what will happen if they move the cursor in a particular way (Fig. \ref{fig:bau2008octopocus_demo}). The accompanying user study indicates that this approach allows for lower overhead in time than when using traditional help menus, that it is less error-prone, allows for ``in situ'' learning, and that it is generally preferred by users.
 
 \begin{figure}
@@ -19,8 +61,6 @@ Thorough experimentation with AR and ubicomp has only been possible in the last 
 
 \textbf{Shadow Tooltips} are a feedforward concept for multi-touch devices \cite{freitag2012enhanced}. When a user's hand approaches the screen, labeled silhouettes of the hand appear around it, conveying the different possible actions the hand can take and their corresponding effect (Fig. \ref{fig:freitag2012enhanced_demo}). In the accompanying qualitative user study, Shadow Tooltips scored very high on \textit{novelty}, high on \textit{appeal}, \textit{ease of use} and \textit{comprehensibility}, and moderate on \textit{relevance}, meaning the users enjoyed trying out the concept, but were divided on its practicality.
 
-\todo{Add Gestu-Wan \cite{rovelo2015gestu}.}
-
 \begin{figure}
     \centering
     \includegraphics[width=0.7\linewidth]{freitag2012enhanced/example.png}
@@ -28,7 +68,17 @@ Thorough experimentation with AR and ubicomp has only been possible in the last 
     \label{fig:freitag2012enhanced_demo}
 \end{figure}
 
-\section{AR Projectors} \label{sec:related_work:ar_projectors}
+\todo{Add Gestu-Wan \cite{rovelo2015gestu}.}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\linewidth]{rovelo2015gestu/schema.jpg}
+    \caption{Illustration of \textbf{Gestu-Wan}, with annotation by the authors: ``Step (1): (A) shows the previously matched posture, while (B) is the target posture. Step (2): When the target posture is matched, it moves up and the tree expands to show the next steps. Step (3): All the next possible postures are shown and the user can match one of them to continue with the gesture''. \cite{freitag2012enhanced}}
+    \label{fig:rovelo2015gestu_schema}
+\end{figure}
+
+\section{AR Projectors} \label{sec:relat:ar_projectors}
 \textbf{\citeauthor{vermeulen2009bet}} use a series of mounted projectors to visualize the different input/output devices present in a room \cite{vermeulen2009bet}. Close to the physical location of each device, they project an icon that resembles it, making all devices clearly visible to the user. The different possible events that input devices can detect are visualized by labels connected to the device's icon. From these events, lines are drawn to the actions that they trigger, and these actions in turn have lines running to the output devices on which they occur (Fig. \ref{fig:vermeulen2009bet_mockup}, \ref{fig:vermeulen2009bet_demo}). This setup gives the user extensive feedforward, since it tells them the exact results of every possible action they can take. The accompanying informal user study yielded promising results, with four of the five participants describing the system's behavior correctly for each of three presented tasks, and all participants indicating that they found the system useful. However, some shortcomings were identified too: it can be hard to keep track of visualizations across multiple surfaces, and visualizations for actions that are obvious or occur often can be confusing and might better be left out.
 
 \begin{figure}
@@ -54,7 +104,7 @@ The \textbf{Feedforward Torch} is a hand-held mobile projector with a touchscree
     \label{fig:vermeulen2012understanding_demo}
 \end{figure}
 
-\section{AR Note-taking} \label{sec:related_work:ar_note-taking}
+\section{AR Note-taking} \label{sec:relat:ar_note-taking}
 \todo{Add intro.}
 \textbf{\citeauthor{liu2011mobile}} propose the use of mobile AR in note-taking \cite{liu2011mobile}. Looking through their PDA's, users can add annotations to the interfaces they aim at. These annotations later serve as feedforward when the users try to retrace their steps. The research team conducted no user study, but does mention challenges and opportunities, where the one concerning us in particular is how to convey rich annotations as clearly and efficiently as possible.
 
@@ -65,7 +115,7 @@ The \textbf{Feedforward Torch} is a hand-held mobile projector with a touchscree
     \label{fig:liu2011mobile_demo}
 \end{figure}
 
-\section{Previewable Switch} \label{sec:related_work:previewable_switch}
+\section{Previewable Switch} \label{sec:relat:previewable_switch}
 \todo{Add intro.}
 The \textbf{Previewable Switch} presents feedforward as a solution to the spatial mapping problem of light switches \cite{park2014previewable}. When a switch is touched, the corresponding lights dim, giving the user feedforward on which lights will turn on or off if they continue their action (Fig. \ref{fig:park2014previewable_demo}). In the accompanied user study, participants consistently toggle lights faster and more accurately using these previewable switches than when using conventional switches, and they feel ``less work demand, reduced sensory time, and more comfort and confidence on their action''.
 

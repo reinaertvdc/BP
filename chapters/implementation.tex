@@ -1,5 +1,7 @@
-\chapter{Implementation} \label{chap:impl}
+\chapter{Implementation of High-fidelity Prototype} \label{chap:impl}
 In the previous chapter, we concluded that maps and colors are promising visualizations, and we expressed our interest in further investigating directional indicators. In this chapter, we describe the application we created for the Microsoft HoloLens to test our visualizations in real life. In the next chapter, we will use this application to evaluate our visualizations through on-site user tests.
+
+
 
 We developed our application in Unity, which is Microsoft's recommended engine for creating HoloLens applications. Coding was done in C\# using Visual Studio. The project included the \textit{MixedRealityToolkit} \cite{Microsof99:online}, a collection of commonly used scripts and components for creating mixed reality applications, provided by Microsoft themselves. Using this package, setting up a HoloLens project is fairly straightforward, and functionality like gesture control and spatial mapping is quick to implement. We also included Vuforia, a popular AR framework, for its ability to recognize markers in the real world and anchor virtual objects to them.
 
