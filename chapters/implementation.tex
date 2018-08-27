@@ -1,22 +1,19 @@
 \chapter{Implementation of High-fidelity Prototype} \label{chap:impl}
-In the previous chapter, we concluded that maps and colors are promising visualizations, and we expressed our interest in further investigating directional indicators. In this chapter, we describe the application we created for the Microsoft HoloLens to test our visualizations in real life. In the next chapter, we will use this application to evaluate our visualizations through on-site user tests.
+In the previous chapter, we concluded that maps and colors are promising visualizations, and we expressed our interest in further investigating directional indicators. In this chapter, we describe the application we created for the Microsoft HoloLens to test our visualizations for spatial awareness in real life. In the next chapter, we will use this application to evaluate these visualizations through a high-fidelity user test. We also developed a separate proof-of-concept to provide AR feedforward for a security control panel, but this prototype is not used in our testing.
 
-
-
-We developed our application in Unity, which is Microsoft's recommended engine for creating HoloLens applications. Coding was done in C\# using Visual Studio. The project included the \textit{MixedRealityToolkit} \cite{Microsof99:online}, a collection of commonly used scripts and components for creating mixed reality applications, provided by Microsoft themselves. Using this package, setting up a HoloLens project is fairly straightforward, and functionality like gesture control and spatial mapping is quick to implement. We also included Vuforia, a popular AR framework, for its ability to recognize markers in the real world and anchor virtual objects to them.
-
-For the actual user tests, we created a rough virtual copy of our work environment, as shown in Figure \ref{fig:model}. This copy included our office, the neighboring room (which is also the classroom from our online survey) and the hallway connecting the two. We modelled only the relevant components, being the walls, the light switches and the lights themselves. This way, we could highlight these components at will through the augmented view of the HoloLens. The entire environment was anchored to a Vuforia marker, an image taped to the wall in our office. By looking at the image, the HoloLens could determine its location and place the virtual environment precisely on top of the real one. Calibration had to be done only once, at startup, after which tracking worked well enough to let us walk around freely throughout the rooms for extended periods of time.
+\subsection{Visualizations for Spatial Awareness}
+We developed the implementation specifically for our work environment, since we had to tell the systems the location of all lights and switches, as well as how they are interconnected. The scene for our implementation consisted of our office, the neighboring room (which is also the classroom from our online survey, shown in Figure \ref{fig:explor:classroom_baseline}) and the hallway connecting the two. See Figure \ref{fig:scene} for a floor plan of the scene.
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.8\linewidth]{resources/implementation/model.jpg}
-    \caption{View of the scene in the Unity editor.}
-    \label{fig:model}
+    \includegraphics[width=0.8\linewidth]{resources/implementation/scene.jpg}
+    \caption{A floor plan of the environment used in our implementation. Each rectangle symbolizes a light, of which there are 22 in total. On the plan, the left room is the classroom from Chapter \ref{chap:explor}, the right room is our office, and the area at the top is the hallway connecting both rooms to the rest of the building.}
+    \label{fig:scene}
 \end{figure}
 
-The two rooms both contain three circuits, each having one switch and three lights. The switches are arranged in a row next to the door, in an unintuitive order, as mentioned in Chapter \ref{chap:explor}. The hallway contains only a single circuit, consisting of two switches that both control the same four lights. The walls and lights have an outline of themselves hovering above the environment. A second Unity camera is anchored to the location of the user and looks straight down on this outline, rotating and shifting with the user, creating a minimap view that we can display in the bottom right of the user's vision. The color of the virtual components and their outlines in the minimap can be controlled separately.
+The two rooms both contain three circuits, each having one switch and three lights. The switches are arranged in a row next to the doorway, in an unintuitive order, as mentioned in Chapter \ref{chap:explor}. The hallway contains only a single circuit, consisting of two switches that both control the same four lights.
 
-Switches can be selected by gazing at them and then making the tapping gesture or using the HoloLens Bluetooth clicker. A selected switch turns red, as shown in Figure \ref{fig:selection}, and can be deselected by clicking it again. This way, the user can activate visualizations for a specific switch, which will show the lights connected to it. The walls are semi-transparent, allowing users to see the overlay of lights and switches in neighboring rooms, and thus also allowing for visualizations to work across multiple rooms.
+While wearing the HoloLens, users can select switches by gazing at them and then making the tapping gesture or using the HoloLens Bluetooth clicker. A selected switch turns red, as shown in Figure \ref{fig:selection}, and can be deselected by tapping it again. This way, the user can activate visualizations for a specific switch, which will show the lights connected to it. Walls are treated as being semi-transparent, allowing users to see the overlay of lights and switches in neighboring rooms, and thus also allowing for visualizations to work across multiple rooms.
 
 \begin{figure}
     \centering
@@ -25,7 +22,7 @@ Switches can be selected by gazing at them and then making the tapping gesture o
     \label{fig:selection}
 \end{figure}
 
-The first visualization that we implement is called the \textbf{world highlights}, because it highlights components in the user's environment. When the user selects a switch, the overlay of the connected lights turn red, as shown in Figure \ref{fig:world_highlights_vis}. The user has no indication of how many connected lights there are and receives no hints as to where they are located; they have to look directly at each light to be able to find them all. We intend this visualization to complement others, rather than stand alone.
+The first visualization that we implement is called the \textbf{world highlights}, because it highlights components in the user's environment. When the user selects a switch, the overlay of the connected lights turn red, as shown in Figure \ref{fig:world_highlights_vis}. Much like the \textit{colors} and \textit{shapes} visualizations of our explorative study, this visualization gives no indication of how many connected lights there are and no hints as to where they are located; the users has to look directly at each light to be able to find them all. As such, we intend this visualization to complement others, rather than stand alone.
 
 \begin{figure}
     \centering
@@ -34,7 +31,7 @@ The first visualization that we implement is called the \textbf{world highlights
     \label{fig:world_highlights_vis}
 \end{figure}
 
-Our second visualization is the \textbf{minimap highlights}, which highlights the connected lights on a minimap in the bottom right corner of the user's view, rather than directly in the user's environment, and is shown in Figure \ref{fig:minimap_highlights_vis}. The user's location is symbolized by the white diamond in the center. The choice of this visualization is based directly on the popularity of the map visualization in our online survey. The minimap rotates with the user, so that the up side is always the direction where the user is looking at, and it shifts to keep the user centered. The map adds a cognitive step in the light finding process, but it may remove the need for the user to look around once they are familiar with the environment.
+Our second visualization is the \textbf{minimap highlights}, which highlights the connected lights on a minimap in the bottom right corner of the user's view, rather than directly in the user's environment, and is shown in Figure \ref{fig:minimap_highlights_vis}. The user's location is symbolized by the white diamond in the center of the minimap. The choice of this visualization is based directly on the popularity of our three map visualizations in the online survey. The minimap rotates with the user, so that the up side is always the direction where the user is looking at, and it shifts to keep the user centered. The map adds a cognitive step in the light finding process, as the user has to translate between map locations and real world locations, but it may remove the need for the user to look around to find the lights once they are familiar with the environment.
 
 \begin{figure}
     \centering
@@ -43,16 +40,23 @@ Our second visualization is the \textbf{minimap highlights}, which highlights th
     \label{fig:minimap_highlights_vis}
 \end{figure}
 
-The third and fourth visualization are directional indicators, which we were eager to evaluate in a more high-fidelity setup. First we create the \textbf{arrows} visualization, shown in Figure \ref{fig:arrows_vis}, which creates triangles pointing at each connected light. When the target is outside the field of view, only the base of the triangle is visible in the periphery. The further away the target is, the longer the triangle and so the more parallel the two legs appear. Since all triangles are always visible, the number of connected lights can quickly be counted. The triangles continually adjust while the user looks around, guiding their gaze towards the targets.
+The third and fourth visualization are directional indicators, which we were eager to evaluate in a more high-fidelity setup. First we create the \textbf{wedges} visualization, shown in Figure \ref{fig:wedges_vis}, which creates triangles pointing at each connected light. When the target is outside the field of view, only the base of the triangle is visible in the periphery. The further away the target is, the longer the triangle and so the more parallel the two legs appear. Since all wedges are always visible, the number of connected lights can quickly be counted. The wedges continually adjust while the user looks around, guiding their gaze towards the targets.
 
 \begin{figure}
     \centering
-    \includegraphics[width=1.0\linewidth]{resources/implementation/arrows.jpg}
-    \caption{The \textit{arrows} visualization. We can tell there are two more lights to the right, one close and one further away.}
-    \label{fig:arrows_vis}
+    \includegraphics[width=1.0\linewidth]{resources/implementation/wedges.jpg}
+    \caption{The \textit{wedges} visualization. We can tell there are two more lights to the right, one close and one further away.}
+    \label{fig:wedges_vis}
 \end{figure}
 
-The second directional indicator, and the fourth visualization, is the \textbf{halo's}, which we already used in the online survey. They work exactly like the arrows, but use circles rather than triangles, as shown in Figure \ref{fig:halos_vis}. The curve of the lines in the peripheral vision shows us the size of the circles, and thus how far away the targets in their center are.
+Our wedges are a 3D adaption of their older 2D namesakes created by \cite{gustafson2008wedge} in \citeyear{gustafson2008wedge} \cite{gustafson2008wedge}. They developed wedges as a way to show points of interest in a 2D space on which the user has only a limited view, like when they use a PDA to look at parts of a map. Wedges themselves were already an improvement on the earlier developed halo's, which use circles rather than triangles \cite{baudisch1993halo}. Figure \ref{fig:baudisch} offers a comparative illustration of both techniques. Both have been shown to effectively convey distance, but wedges are less cluttering when several appear close together.  We are interested to see if we reach the same conclusion for 3D space, which is why we include \textbf{halo's} as or fourth visualization. The curve of the lines in the peripheral vision shows us the size of the circles, and thus how far away the targets in their center are, as shown in Figure \ref{fig:halos_vis}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1.0\linewidth]{resources/implementation/baudisch.jpg}
+    \caption{Annotation by the authors: ``(a) The problem: Halo arcs point users to off-screen targets, but overlapping arcs are hard to interpret. (b) \textit{Wedges} point to the same off-screen locations; since they avoid overlap, the display remains intelligible.'' \cite{baudisch1993halo}}
+    \label{fig:baudisch}
+\end{figure}
 
 \begin{figure}
     \centering
@@ -70,11 +74,30 @@ Our fifth and last visualization is the \textbf{colors}, the most promising appr
     \label{fig:colors_vis}
 \end{figure}
 
-Our application is not limited to using only one visualization at a time; multiple visualizations can be combined to evaluate how they might complement each other. Figure \ref{fig:combo_vis} illustrates this with a combination of the minimap highlights and the arrows. For our user tests, we can remotely control which visualizations are active via the Windows HoloLens application. This application can stream keyboard input from a computer to the HoloLens. Our application listens for these key presses and changes the active visualizations accordingly.
+Our application is not limited to using only one visualization at a time; multiple visualizations can be combined to evaluate how they might complement each other. Figure \ref{fig:combo_vis} illustrates this with a combination of the minimap highlights and the wedges. For our user tests, we can remotely control which visualizations are active via the Windows HoloLens application. This application can stream keyboard input from a computer to the HoloLens. Our application listens for these key presses and changes the active visualizations accordingly.
 
 \begin{figure}
     \centering
     \includegraphics[width=1.0\linewidth]{resources/implementation/combo.jpg}
-    \caption{A combination of arrows and minimap highlights. We can see the switches and lights through the wall, and we can compare with the minimap.}
+    \caption{A combination of wedges and minimap highlights. We can see the switches and lights through the wall, and we can compare with the minimap.}
     \label{fig:combo_vis}
 \end{figure}
+
+\subsection{Feedforward on a Security Control Panel}
+
+
+\subsection{Implementation Details}
+Our platform of choice was the Microsoft HoloLens, which we have briefly described before at the end of section \ref{sec:relat:ar}. The HoloLens is the first commercially available untethered AR HMD with spatial awareness. Its sensors include six camera's, four microphones, an ambient light sensor and an inertial measurement unit \cite{HoloLens84:online}. These sensors allow the HoloLens to create a 3D model of its surroundings in real time, and to track its position and orientation with great accuracy, even on a multi-room scale. This precise spatial understanding allows the HoloLens to use its HMD to simulate the existence of virtual objects in the real world. For our implementation, we did not use the HoloLens's spatial mapping functionality, as we thought it more reliable to hard-code the exact positions of walls, lights and switches. However, the HoloLens's accurate head tracking was essential to our prototype, especially for the directional indicators.
+
+We developed our implementation in Unity, which is Microsoft's recommended engine for creating HoloLens applications. Coding was done in C\# using Visual Studio. The project included the \textit{MixedRealityToolkit} \cite{Microsof99:online}, a collection of commonly used scripts and components for creating mixed reality applications, provided by Microsoft themselves. Using this package, setting up a HoloLens project is fairly straightforward, and functionality like gesture control and spatial mapping is quick to implement. We also included Vuforia, a popular AR framework, for its ability to recognize markers in the real world and anchor virtual objects to them.
+
+The internal representation of the scene is shown in Figure \ref{fig:model}. We modelled only the relevant components, being the walls, the light switches and the lights themselves. This way, we could highlight these components at will through the augmented view of the HoloLens. The entire environment was anchored to a Vuforia marker, an image taped to the wall in our office. By looking at the image, the HoloLens could determine its location and place the virtual environment precisely on top of the real one. Calibration had to be done only once, at startup, after which tracking worked well enough to let us walk around freely throughout the rooms for extended periods of time.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{resources/implementation/model.jpg}
+    \caption{View of the scene in the Unity editor.}
+    \label{fig:model}
+\end{figure}
+
+The walls and lights have an outline of themselves hovering above the environment. A second Unity camera is anchored to the location of the user and looks straight down on this outline, rotating and shifting with the user, creating a minimap view that we can display in the bottom right of the user's vision. The color of the virtual components and their outlines in the minimap can be controlled separately.

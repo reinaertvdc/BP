@@ -36,21 +36,25 @@ The rest of the 90s and the 00s brought a large variety of AR applications, and 
 \end{figure}
 
 \section{Feedforward} \label{sec:relat:feedforward}
-Feedforward, as mentioned in Chapter \ref{chap:intro}, is the process of telling the user what is going to happen if they proceed with an action. This is different from Norman's \textit{affordances} \cite{norman2013design}, which show only the potential for an action, without conveying its possible effects \cite{chueke2016perceptible}.
+Feedforward, as mentioned in Chapter \ref{chap:intro}, is the process of telling the user what will happen if they proceed with an action \cite{djajadiningrat2002but}. This is different from Norman's \textit{affordances} \cite{norman2013design}, which show only the potential for an action, without conveying its effects \cite{chueke2016perceptible}.
 
-\citeauthor{djajadiningrat2002but} (\citeyear{djajadiningrat2002but}) argue that ``both appearance and action are carriers of meaning'' \cite{djajadiningrat2002but}, or in other words, a UI element can express its purpose both via its appearence and via its available actions.
+Feedforward was defined in \citeyear{djajadiningrat2002but} by \citeauthor{djajadiningrat2002but} \cite{djajadiningrat2002but}. They argued that the ``key to solving most usability problems'' of electronic devices lies not in conveying required actions, but rather in feedforward and inherent feedback. Unlike perceived affordances, feedforward also displays the purpose of an action, and inherent feedback shows its effects in a way the user perceives as a natural consequence of said action. The authors go on to explain that ``both appearance and action are carriers of meaning'', or in other words, a UI element can provide feedforward both via its appearance and via its available actions. The first method they call the semantic approach, as it relies on the user's earlier knowledge and experiences to convey information. Labels, icons and colors are examples of this method, as they have no inherent meaning but rather the user must have learned their semantics at some earlier point in time. The second method is the direct approach, and it presumes that meaning is created through interaction. However, since affordances only exist through the user's perception of possible actions, the authors consider the sensory richness of tangible interactions indispensable for creating meaning in this way. Their tangible alarm, developed as an illustration of this method, is shown in Figure \ref{fig:djajadiningrat2002but_tangible_alarm}. Two years after their original publication, the authors were part of a team that further investigated tangible products and that developed several more examples \cite{djajadiningrat2004tangible}.
 
-\todo{Discuss the different views on feedforward, as given by
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\linewidth]{djajadiningrat2002but/tangible_alarm.jpg}
+    \caption{An alarm clock illustrating the creation of meaning through interaction. Annotation by the authors: ``If the left hemisphere of the alarm ball is turned while holding the display strip, the hours of the waking time are adjusted. If the right hemisphere is rotated, the minutes are adjusted. The alarm clock can sense the distance between the base station and the alarm ball. The further the alarm ball is placed away, the more insistent the sound will be in the morning. The user's actions thus become carriers of meaning and influence the alarm clock's behaviour.'' \cite{djajadiningrat2002but}}
+    \label{fig:djajadiningrat2002but_tangible_alarm}
+\end{figure}
 
-\citeauthor{djajadiningrat2002but} \cite{djajadiningrat2002but}, \citeauthor{wensveen2004interaction} \cite{wensveen2004interaction}
-\citeauthor{vermeulen2013crossing} \cite{vermeulen2013crossing}.
+In \citeyear{wensveen2004interaction}, \citeauthor{wensveen2004interaction} distinguished three different types of information a user can receive from a system, both through feedback and feedforward: \textit{inherent}, \textit{augmented} and \textit{functional} \cite{wensveen2004interaction}. The first type, \textit{inherent} information, refers to inherent perceived possible actions of a system component, like a button that can be pushed or a knob that can be turned. This type of information coincides with the creation of meaning through interaction and the inherent feedback discussed earlier. The second type, \textit{augmented} information, conveys information through additional sources, like labels or pop-up messages. This type corresponds to the semantic approach. The third and last type is \textit{functional} information, which tells the user about the general purpose and applicability of a system, rather than any specific possible actions or features. For example, the presence of wheels on a device indicates that it is supposed to move around, and the presence of speakers hints that it is used for making sound.
 
-A good comparison has previously been made by \citeauthor{chueke2016perceptible} \cite{chueke2016perceptible}. Also missing \cite{djajadiningrat2004tangible}.}
+In \citeyear{vermeulen2013crossing}, \citeauthor{vermeulen2013crossing} analyzed existing frameworks for feedforward using a comparative table, and they disambiguated these frameworks from related concepts like perceptible affordances and feedback. They also related feedforward to the effector affordances as described by \citeauthor{kaptelinin2012affordances} in \citeyear{kaptelinin2012affordances}, which turned out to be very similar. The main conclusion of the study is that feedforward as a HCI design technique is not yet fully developed and that therefore specific applications cannot yet be fully evaluated.
 
 \section{Gesture-based Commands} \label{sec:relat:gesture-based_commands}
-In ubicomp environments, the user should be able to interact with the system in a way that feels natural, and preferably they are able to move around freely while doing so. Gesture-based commands allow the user to describe their intention with motions, which may be more convenient than pressing buttons in some cases, and mid-air gestures do not lock the user in place. We will now discuss some earlier works on gesture-based commands and their possible advantages.
+Users should be able to interact with computer systems in a way that feels natural. In ubicomp environments specifically, the user is preferably also able to move around freely during these interactions. Gestures are a natural way of communication, and gesture-based commands allow the user to describe their intentions using this familiar method. Mid-air gestures additionally do not lock the user in place. We will now discuss some earlier works on gesture-based interactions and their possible applications.
 
-\textbf{OctoPocus} explores the use of feedforward in on-screen gesture-based commands \cite{bau2008octopocus}. When the user initiates a command, for each possible gesture a labeled path radiates from the cursor, giving the user feedforward by telling them what will happen if they move the cursor in a particular way (Fig. \ref{fig:bau2008octopocus_demo}). The accompanying user study indicates that this approach allows for lower overhead in time than when using traditional help menus, that it is less error-prone, allows for ``in situ'' learning, and that it is generally preferred by users.
+\textbf{OctoPocus} explores the use of feedforward in on-screen gesture-based commands \cite{bau2008octopocus}. When the user initiates a command, for each possible gesture a labeled path radiates from the cursor, giving the user feedforward by telling them what will happen if they move the cursor in a particular way, as shown in Figure \ref{fig:bau2008octopocus_demo}. The accompanying user study indicates that this approach allows for lower overhead in time than when using traditional help menus, that it is less error-prone, allows for ``in situ'' learning, and that it is generally preferred by users.
 
 \begin{figure}
     \centering
@@ -59,7 +63,7 @@ In ubicomp environments, the user should be able to interact with the system in 
     \label{fig:bau2008octopocus_demo}
 \end{figure}
 
-\textbf{Shadow Tooltips} are a feedforward concept for multi-touch devices \cite{freitag2012enhanced}. When a user's hand approaches the screen, labeled silhouettes of the hand appear around it, conveying the different possible actions the hand can take and their corresponding effect (Fig. \ref{fig:freitag2012enhanced_demo}). In the accompanying qualitative user study, Shadow Tooltips scored very high on \textit{novelty}, high on \textit{appeal}, \textit{ease of use} and \textit{comprehensibility}, and moderate on \textit{relevance}, meaning the users enjoyed trying out the concept, but were divided on its practicality.
+\textbf{Shadow Tooltips} are a feedforward concept for multi-touch devices \cite{freitag2012enhanced}. When a user's hand approaches the screen, labeled silhouettes of the hand appear around it, conveying the different possible actions the hand can take and their corresponding effect, as shown in Figure \ref{fig:freitag2012enhanced_demo}. In the accompanying qualitative user study, Shadow Tooltips scored very high on \textit{novelty}, high on \textit{appeal}, \textit{ease of use} and \textit{comprehensibility}, and moderate on \textit{relevance}, meaning the users enjoyed trying out the concept, but were divided on its practicality.
 
 \begin{figure}
     \centering
@@ -68,8 +72,7 @@ In ubicomp environments, the user should be able to interact with the system in 
     \label{fig:freitag2012enhanced_demo}
 \end{figure}
 
-\todo{Add Gestu-Wan \cite{rovelo2015gestu}.}
-
+\textbf{Gestu-Wan} is a mid-air gesture guidance system for walk-up-and-use displays \cite{rovelo2015gestu}. Since these displays must be usable without users first having to learn all gestures, a system is needed to show users their possible actions as they go along. First, Gestu-Wan breaks the mid-air gestures down into a hierarchy of postures. Then, for each posture the user assumes, Gestu-Wan will show the next possible postures along with a label describing their effects, until the user has completed an entire gesture and the corresponding command is executed, as illustrated in Figure \ref{fig:rovelo2015gestu_schema}. This way, Gestu-Wan provides continuous and sequential feedforward by showing the user which actions are available at any point and what they lead to, as well as feedback by showing the user whether the system has correctly interpreted each previous posture. In the accompanying user study, Gestu-Wan outperformed a static paper gesture guide when used for complex gestures, however simpler gestures did not see this improvement.
 
 \begin{figure}
     \centering
@@ -79,7 +82,7 @@ In ubicomp environments, the user should be able to interact with the system in 
 \end{figure}
 
 \section{AR Projectors} \label{sec:relat:ar_projectors}
-\textbf{\citeauthor{vermeulen2009bet}} use a series of mounted projectors to visualize the different input/output devices present in a room \cite{vermeulen2009bet}. Close to the physical location of each device, they project an icon that resembles it, making all devices clearly visible to the user. The different possible events that input devices can detect are visualized by labels connected to the device's icon. From these events, lines are drawn to the actions that they trigger, and these actions in turn have lines running to the output devices on which they occur (Fig. \ref{fig:vermeulen2009bet_mockup}, \ref{fig:vermeulen2009bet_demo}). This setup gives the user extensive feedforward, since it tells them the exact results of every possible action they can take. The accompanying informal user study yielded promising results, with four of the five participants describing the system's behavior correctly for each of three presented tasks, and all participants indicating that they found the system useful. However, some shortcomings were identified too: it can be hard to keep track of visualizations across multiple surfaces, and visualizations for actions that are obvious or occur often can be confusing and might better be left out.
+\textbf{\citeauthor{vermeulen2009bet}} use a series of mounted projectors to visualize the different input/output devices present in a room \cite{vermeulen2009bet}. Close to the physical location of each device, they project an icon that resembles it, making all devices clearly visible to the user. The different possible events that input devices can detect are visualized by labels connected to the device's icon. From these events, lines are drawn to the actions that they trigger, and these actions in turn have lines running to the output devices on which they occur, as shown in Figures \ref{fig:vermeulen2009bet_mockup} and \ref{fig:vermeulen2009bet_demo}. This setup gives the user extensive feedforward, since it tells them the exact results of every possible action they can take. The accompanying informal user study yielded promising results, with four of the five participants describing the system's behavior correctly for each of three presented tasks, and all participants indicating that they found the system useful. However, some shortcomings were identified too: it can be hard to keep track of visualizations across multiple surfaces, and visualizations for actions that are obvious or occur often can be confusing and might better be left out.
 
 \begin{figure}
     \centering
@@ -95,7 +98,7 @@ In ubicomp environments, the user should be able to interact with the system in 
     \label{fig:vermeulen2009bet_demo}
 \end{figure}
 
-The \textbf{Feedforward Torch} is a hand-held mobile projector with a touchscreen, that can be aimed at legacy hardware interfaces to either project textual or graphical clarifications on them, or to show these clarifications on the on-board screen (Fig. \ref{fig:vermeulen2012understanding_demo}) \cite{vermeulen2012understanding}. In the accompanying small user study, all participants indicated they found the system useful. Visualizations were preferred over textual explanations and the participants appreciated the fact that information was overlaid on the associated interface rather than displayed on a mobile screen, which eliminated the need to look back and forth but also brings privacy concerns. The research team concludes that the concept could be valuable in helping users interact with systems that are complex or that suffer from design flaws.
+The \textbf{Feedforward Torch} is a hand-held mobile projector with a touchscreen, that can be aimed at legacy hardware interfaces to either project textual or graphical clarifications on them, or to show these clarifications on the on-board screen, as shown in Figure \ref{fig:vermeulen2012understanding_demo} \cite{vermeulen2012understanding}. In the accompanying small user study, all participants indicated they found the system useful. Visualizations were preferred over textual explanations and the participants appreciated the fact that information was overlaid on the associated interface rather than displayed on a mobile screen, which eliminated the need to look back and forth but also brings privacy concerns. The research team concludes that the concept could be valuable in helping users interact with systems that are complex or that suffer from design flaws.
 
 \begin{figure}
     \centering
@@ -105,8 +108,7 @@ The \textbf{Feedforward Torch} is a hand-held mobile projector with a touchscree
 \end{figure}
 
 \section{AR Note-taking} \label{sec:relat:ar_note-taking}
-\todo{Add intro.}
-\textbf{\citeauthor{liu2011mobile}} propose the use of mobile AR in note-taking \cite{liu2011mobile}. Looking through their PDA's, users can add annotations to the interfaces they aim at. These annotations later serve as feedforward when the users try to retrace their steps. The research team conducted no user study, but does mention challenges and opportunities, where the one concerning us in particular is how to convey rich annotations as clearly and efficiently as possible.
+Sometimes users need to perform repetitive tasks using complex systems. These tasks might require only a small subset of the system's functionality, but might still be confusing because of the presence of all the other available yet irrelevant actions, or because the task is only performed occasionally. For example, an audiophile might have some configuration on their synthesizer which takes nine steps to complete, and which they rarely use. \textbf{\citeauthor{liu2011mobile}} propose the use of mobile AR in note-taking \cite{liu2011mobile} to alleviate this problem. While looking through their PDA's, users can add annotations to the interfaces they aim at. These annotations later serve as feedforward when the users try to retrace their steps. The research team conducted no user study, but does mention challenges and opportunities, where the one concerning us in particular is how to convey rich annotations as clearly and efficiently as possible.
 
 \begin{figure}
     \centering
@@ -116,8 +118,7 @@ The \textbf{Feedforward Torch} is a hand-held mobile projector with a touchscree
 \end{figure}
 
 \section{Previewable Switch} \label{sec:relat:previewable_switch}
-\todo{Add intro.}
-The \textbf{Previewable Switch} presents feedforward as a solution to the spatial mapping problem of light switches \cite{park2014previewable}. When a switch is touched, the corresponding lights dim, giving the user feedforward on which lights will turn on or off if they continue their action (Fig. \ref{fig:park2014previewable_demo}). In the accompanied user study, participants consistently toggle lights faster and more accurately using these previewable switches than when using conventional switches, and they feel ``less work demand, reduced sensory time, and more comfort and confidence on their action''.
+In ubicomp environments, sometimes different devices interact with each other. For example, a central domotics panel might control the loudness of different speakers throughout the house. In such scenarios, feedforward could be used to clarify to the user which devices will by affected by a specific action. This is demonstrated by the \textbf{Previewable Switch}, a system that presents feedforward as a solution to the spatial mapping problem of light switches \cite{park2014previewable}. When a switch is touched, the corresponding lights dim, giving the user feedforward on which lights will turn on or off if they continue their action, as shown in Figure \ref{fig:park2014previewable_demo}. In the accompanied user study, participants consistently toggle lights faster and more accurately using these previewable switches than when using conventional switches, and they feel ``less work demand, reduced sensory time, and more comfort and confidence on their action''.
 
 \begin{figure}
     \centering
@@ -125,6 +126,9 @@ The \textbf{Previewable Switch} presents feedforward as a solution to the spatia
     \caption{The user touches a \textbf{Previewable Switch}, which causes the corresponding light to dim \cite{park2014previewable}}
     \label{fig:park2014previewable_demo}
 \end{figure}
+
+\section{Conclusions} \label{sec:relat:concl}
+In this chapter, we have created an apt knowledge base to build the remainder of our study on. We have provided context by reviewing the histories of AR and feedforward, and we have studied previous experiments related to both. We have seen AR feedforward applied through HMD's, projectors and hand-held devices, we have seen AR used for note-taking and to convey relationships between devices, and we have seen several applications of gesture-based commands. In the next chapter, we will rely upon this knowledge while performing our own explorative study of the design space.
 
 %\section{Directional Indicators} \label{sec:related_work:directional_indicators}
 %Talk about \cite{baudisch1993halo} and \cite{gustafson2008wedge}.
