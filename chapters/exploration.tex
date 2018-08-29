@@ -44,7 +44,7 @@ After the baseline kitchen scenario comes the baseline classroom scenario. Both 
 
 After the two baseline scenarios follow seven augmented scenarios, which make up the main part of our survey.  First, participants receive a short introduction to AR, which uses Pokémon Go as an example. Then, they are told ``For the remainder of the survey, imagine you are looking at the world through a smartphone or through an augmented reality headset. In each of the following scenarios, your AR device will try to aid you by augmenting your vision in some way. Anything yellow is not part of these visualizations''.
 
-For each of the seven augmented scenarios, the participant is asked to match the switches and the lights in an answering grid, in the way they believe is indicated by the visualization. Next, we ask them once more how certain they are of their answer, on a 1-5 Likert scale. Then comes a new question: ``I believe that, in real life, the above visualization would be...'':
+For each of the seven augmented scenarios, the participant is asked to match the switches and the lights in an answering grid, in the way they believe is indicated by the visualization. Next, we ask them once more how certain they are of their answer, on a 1-5 Likert scale. Then comes a new question: ``I believe that, in real life, the above visualization would be\ldots'':
 \begin{itemize}
     \item Easy to learn
     \item Fast to work with
@@ -52,7 +52,7 @@ For each of the seven augmented scenarios, the participant is asked to match the
     \item Useful
     \item Enjoyable
 \end{itemize}
-Participants again have to answer on a 1-5 Likert scale for each of these five dimensions, which are derived from five of the Nielsen heuristics for user interface design \cite{nielsen1990heuristic}. They give us an indication of how the participants perceive each of the visualizations, and the perceived resistance to errors might be interesting to compare to the actual correctness of the participant's matching grids.
+Participants again have to answer on a 1-5 Likert scale for each of these five dimensions, which are derived from five of the Nielsen heuristics for user interface design \cite{nielsen1990heuristic}. They give us an indication of how the participants perceive each of the visualizations, and the perceived resistance to errors might be interesting to compare to the actual correctness of the participants' matching grids.
 
 The first visualization we present to the participants is the \textit{colors} visualization, which matches lights and switches by marking them with dots of the same color, as shown in Figure \ref{fig:explor:colors_vis}. We expect this to be a very intuitive and effective visualization, and we placed it first in the hopes of gradually easing the participants into their task. To illustrate how natural the visualization is, this is the technique we used without thinking to mark the circuits in our own notes, and other people could understand them without giving them a second glance. We are interested to see if we can find visualizations that outperform colors, maybe even just in specific cases, which is why we included it for comparison.
 
@@ -124,7 +124,7 @@ First, we showed participants the leftmost switch in Figure \ref{fig:explor:swit
 \begin{figure}
     \centering
     \includegraphics[width=1.0\linewidth]{exploration/switches.jpg}
-    \caption{...}
+    \caption{The pictures of switches used in the last part of our survey. From left to right: \textit{standard switch}, \textit{rotating switch} and \textit{sliding switch}.}
     \label{fig:explor:switches}
 \end{figure}
 
@@ -151,7 +151,22 @@ The survey received a total of 36 unpaid responses. After careful consideration,
     \end{table}
 
 \section{Results \& Discussion} \label{sec:explor:res_disc}
-%We start off by discussing the two baseline scenarios. The first question we wanted to ask ourselves after closing the survey was ``What is the most common solution for each scenario, and how common is it?''. In other words, we want to know whether a consensus is reached, or if there is total disagreement among respondents. Figures \ref{fig:preliminary_study_kitchen_baseline_consensus} and \ref{fig:preliminary_study_classroom_baseline_consensus} show the most common solution for both baseline scenarios, by putting the labels of connected lights and switches in the same color. The consensuses are also summarized in table \ref{table:preliminary_study_consensus}.
+We start by discussing the two baseline scenarios. The first question we wanted to ask ourselves was which solutions are the most common and how common they are. In other words, we were interested in whether the participants could come to an agreement on how the circuits should be laid out, or if opinions were wildly different. Tables \ref{table:classroom_answers} and \ref{table:kitchen_answers} display all solutions given by the participants, for the classroom and the kitchen scenario respectively, along with how many times each solution was given. The order is descending by number of times given, but is otherwise arbitrary, since we saw no simple way to bring structure to the data. This is also not the point of these tables; we merely intend to give some rough idea of the difference in opinions.
+
+For the classroom scenario, we see that 21 participants, or 61.8\%, agree on a single solution, which is to assign the back row of lights to the leftmost switch, the middle row to the middle switch and the front row to the rightmost switch. The way in which we displayed the room and the switches might have confused some participants into thinking that the switches were rotated 90 degrees, which would make the back, middle and front rows turn into left, middle and right rows. This would explain the popularity of this solution.
+
+The rationales behind the given solutions, shown in Figure \ref{fig:explor:rationales}, seem to support the popularity of the described configuration. For the classroom scenario, nearly 75\% of the participants indicated that the assumption that ``each switch controls the lights that are closest to it'' played some role in their decisions. Meanwhile, all of the other assumptions were considered by less than one third of the participants. Ten participants wrote comments along the lines of ``every switch is a row of lights , starting from left (first row) middle (second) right (last)''. The reasoning then seems to be that the switches are treated like an abstract map of the room, and that each light is assigned the the closest switch. The fact that the back and middle row of lights are spaced closer, just like the left and middle switch are grouped together, might have also played a role in choosing this solution. Indeed, one participant explicitly confirmed this by noting that ``\ldots if you look at the fitting the small switches combined are the same size as 1 big one so I just assumed they had to use a larger one, given the hole they needed to fill''.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1.0\linewidth]{exploration/rationales.png}
+    \caption{Rationales behind the solutions given in the two baseline scenarios.}
+    \label{fig:explor:rationales}
+\end{figure}
+
+The fact that 61.8\% of participants agreed with the most popular solution, means that 38.2\% did not. Therefore, if we were to solve the problem of matching lights and switches by simply choosing the most popular solution, then over a third of participants would still find themselves confused in this particular room. These 13 participants were split over 9 sometimes very differing solutions. For example, five participants agreed that switch C was connected to all nine lights, while another participant thought that switch C did nothing at all. Notably, the actual real life configuration of the classroom, shown at the bottom of Table \ref{table:classroom_answers}, was chosen by no one, which indicates that it is indeed unintuitive.
+
+The kitchen caused even more confusion than the classroom, with 21 different solutions offered. This time, no majority was reached, with the most popular configuration scoring only 9 participants, or 26.5\%. In Figure \ref{fig:explor:rationales}, we see that next to the previous assumption, participants now also rely on ``larger switches control larger lights'' and ``larger switches control more lights''. However, the approach of mapping the switches on a floor plan of the room still holds up: the most popular solution assigns the left switch A to the left wall light, the central switch B to the central two hanging lights and the bottom switch D to the two closer by ceiling lights. The only exception to the rule is the remaining small ceiling light in the back, which is assigned to the rightmost switch C, possibly out of necessity to make the rest of the configuration work. Indeed, as with the previous scenario, several comments were made along the lines of ``To me, the mapping was largely geometric (left, right, lower buttons correspond to lights that are closer by)''. Two participants mentioned that ``The large switch should be the 'main' switch, used for everyday light''. We note that this solution, as well as most others, group similar lights together, as illustrated by this comment stating that ``each switch controls similar lights, \ldots, so ceiling lights separately, mood lighting separately, hanging lights separately, \ldots''
 
 \clearpage
 
@@ -192,7 +207,7 @@ The survey received a total of 36 unpaid responses. After careful consideration,
     \centering
     \begin{tabular}{|c|c|c|c|c|} 
     \hline
-    A     & B   & C   & D             & Times given \\
+    A     & B     & C   & D           & Times given \\
     \hline
     2     & 4 6   & 1   & 3 5         & 9 \\
     4 6   & 2     & 1   & 3 5         & 4 \\
@@ -230,30 +245,33 @@ The survey received a total of 36 unpaid responses. After careful consideration,
 
 \clearpage
 
-\begin{table}
-    \centering
-    \begin{tabular}{|c|c|c|} 
-    \hline
-      & Kitchen & Classroom \\
-    \hline
-    A & 2       & 2, 8, 9   \\
-    B & 4, 6    & 3, 7, 4   \\
-    C & 1       & 1, 5, 6   \\
-    D & 3, 5    & N/A       \\
-    \hline
-\end{tabular}
-\caption{Baseline scenario consensuses}
-\label{table:preliminary_study_consensus}
-\end{table}
+Moving on to the seven augmented scenarios, we start by discussing Figure \ref{fig:explor:confidence}, which shows the participants' confidence and correctness for each scenario. The first thing to note here is that participants are uncertain of their answers in both baseline scenarios, slightly more so in the kitchen than in the classroom, and very certain in all augmented scenarios but the \textit{arcs}, which we will discuss in more detail later on. This much improved confidence is justified, as again all visualizations but the arcs are interpreted correctly by over 80\% of the participants, with the \textit{colors} visualization even having 100\% correctness. In contrast, the classroom and kitchen baselines reached no more than 61.8\% and 26.5\% agreement respectively on any single configuration. For the classroom, we know that the actual correctness is 0\%.
 
-For the kitchen scenario, the most common solution was given by 10 out of 34 respondents, or 29.41\%. In total, 20 different solutions were offered. We believe this shows strong disagreement, since no configuration would be intuitive for even a third of the respondents. For the classroom scenario, the most common solution was given by 21 out of 34 respondents, or 61.76\%. In total, 9 different solutions were offered. We believe this shows a clear consensus, but is still problematic because no matter the configuration, at least one in three respondents would find it confusing.
+\begin{figure}
+    \centering
+    \includegraphics[width=1.0\linewidth]{exploration/confidence.png}
+    \caption{Level of confidence in the given solution for each of the nine scenarios, followed by the number of correct answers (wrong answers are dark red, correct ones light green) for each of the augmented scenarios.}
+    \label{fig:explor:confidence}
+\end{figure}
+
+For easy comparison, we have summarized the results of all visualizations in Figure \ref{fig:explor:results}. Our first visualization, \textit{colors}, scored well in all aspects; it proved effective and reliable, as well as enjoyable. However, two people remarked that the matching could be ``\ldots easily learned with roughly five seconds of experimenting'', and so they were ``\ldots unsure if the system will offer much of a benefit''. Two others noted that the visualization is ``Not effective for certain colour-blind people''. We consider both to be valid complaints. The first applies to all of our visualizations, but is only true if actually toggling the lights has no negative consequences, like accidentally putting your colleagues in the dark. The second complaint we considered ourselves too, and it is one of the reasons we included our next visualization.
+
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1.0\linewidth]{exploration/results.png}
+    \caption{Scores given by the participants on five aspects of each of our seven visualizations.}
+    \label{fig:explor:results}
+\end{figure}
+
+%For the kitchen scenario, the most common solution was given by 10 out of 34 respondents, or 29.41\%. In total, 20 different solutions were offered. We believe this shows strong disagreement, since no configuration would be intuitive for even a third of the respondents. For the classroom scenario, the most common solution was given by 21 out of 34 respondents, or 61.76\%. In total, 9 different solutions were offered. We believe this shows a clear consensus, but is still problematic because no matter the configuration, at least one in three respondents would find it confusing.
 
 %Next we wanted to know the rationale behind the given solutions. In the survey, seven assumptions were provided, and for each of them, the respondent had to indicate whether it played ``no role'', a ``small role'' or a ``large role'' in determining their solution. The results can be seen in Figure \ref{fig:preliminary_study_rationales}. In this bar chart, we awarded one point to an assumption each time a respondent indicated it played a ``large role'', half a point if it played a ``small role'' and no points if it played ``no role''. For example, an assumption with ten points may have played a ``large role'' eight times and a ``small role'' four times.
 
 
 
-Our first conclusion from Figure \ref{fig:preliminary_study_rationales} is that respondents clearly based their solutions in the kitchen scenario on three main assumptions, which are, in descending order:
-
+%Our first conclusion from Figure \ref{fig:preliminary_study_rationales} is that respondents clearly based their solutions in the kitchen scenario on three main assumptions, which are, in descending order:
 \begin{enumerate}
     \item Each switch controls the lights that are closest to it.
     \item Larger switches control larger lights.
@@ -262,31 +280,13 @@ Our first conclusion from Figure \ref{fig:preliminary_study_rationales} is that 
 
 %When looking back at the consensus in Figure \ref{fig:preliminary_study_kitchen_baseline_consensus}, we do indeed find these three assumptions. A testimony to the first assumption is the fact that the leftmost switch A controls the leftmost wall light, the central switch B controls the more centrally placed hanging lights, and the rightmost switch C controls the rightmost (at least from the given viewpoint) small light in the back. The other two assumptions are found in the fact that the large switch D controls the two large ceiling lights, giving it on average more and larger lights than the other switches. The four remaining assumptions are not apparent in the consensus. For example, it is not true that higher placed switches on average control more lights.
 
-\todo{Talk about tendency to group similar lights, and quote remarks by respondents.}
+%\todo{Talk about tendency to group similar lights, and quote remarks by respondents.}
 
-If we now look at the classroom scenario in Figure \ref{fig:preliminary_study_rationales}, we find that the consensus is now strongly based on the single assumption that ``Each switch controls the lights that are closest to it.'', with all other assumptions falling far behind. We believe this happens because the respondent is now given three switches to control a 3x3 grid of identical lights, and so the most straightforward solution is to connect each switch with the row or column of lights that is closest to it, with no other factors taken into consideration. We note that in the consensus the lights are matched to the close-up of the switches, rather than to the actual switches in the room, which are turned 90 degrees. However, we believe that this phenomenon is due to the perspective of the image confusing the respondents, that it would not occur in the real world, and thus that it does not undermine our conclusion.
+%If we now look at the classroom scenario in Figure \ref{fig:preliminary_study_rationales}, we find that the consensus is now strongly based on the single assumption that ``Each switch controls the lights that are closest to it.'', with all other assumptions falling far behind. We believe this happens because the respondent is now given three switches to control a 3x3 grid of identical lights, and so the most straightforward solution is to connect each switch with the row or column of lights that is closest to it, with no other factors taken into consideration. We note that in the consensus the lights are matched to the close-up of the switches, rather than to the actual switches in the room, which are turned 90 degrees. However, we believe that this phenomenon is due to the perspective of the image confusing the respondents, that it would not occur in the real world, and thus that it does not undermine our conclusion.
 
-The third and last topic on the baseline scenarios we want to discuss is the certainty of the respondents. More specifically, we want to compare the certainty of those who followed the consensus to those who did not. For this we created Table \ref{table:preliminary_study_baseline_certainties}. In this table, we can see that the average certainty was slightly higher among respondents who followed the consensus than among those who did not, and was also higher in the classroom scenario than in the kitchen scenario (remember that certainty was indicated by the respondent on a Likert-scale from 1 to 5). However, we believe the main takeaway from this table is that the respondents felt generally uncertain, since no average certainty reached even the middle score of 3 out of 5.
+%The third and last topic on the baseline scenarios we want to discuss is the certainty of the respondents. More specifically, we want to compare the certainty of those who followed the consensus to those who did not. For this we created Table \ref{table:preliminary_study_baseline_certainties}. In this table, we can see that the average certainty was slightly higher among respondents who followed the consensus than among those who did not, and was also higher in the classroom scenario than in the kitchen scenario (remember that certainty was indicated by the respondent on a Likert-scale from 1 to 5). However, we believe the main takeaway from this table is that the respondents felt generally uncertain, since no average certainty reached even the middle score of 3 out of 5.
 
-\begin{table}
-    \centering
-    \begin{tabular}{|c|c c|c|} 
-    \hline
-              & Followed consensus & Did not follow consensus &      \\
-    \hline
-    Kitchen   &               2.70 &                     2.21 & 2.35 \\
-    Classroom &               2.76 &                     2.54 & 2.68 \\
-    \hline
-              &               2.73 &                     2.36 & 2.52 \\
-    \hline
-\end{tabular}
-\caption{Average certainty in baseline scenarios}
-\label{table:preliminary_study_baseline_certainties}
-\end{table}
-
-Our main conclusions from the baseline scenarios are as follows. There is much disagreement on the most intuitive configuration in any given scenario. Respondents often feel uncertain when confronted with unfamiliar scenarios, even when they are of simple to average complexity. When presented with an unfamiliar scenario, respondents will typically try to solve it by using the switches as a floor plan. They will try to match the layout of the switches to the layout of the lights, and larger switches will be assigned more or larger lights if it does not conflict with the layout. However, a significant portion of the respondents reasons differently, and thus there is not always a configuration that fits everyone.
-
-\subsection{Augmented Scenarios} \label{sec:preliminary_study:augmented_scenarios}
+%Our main conclusions from the baseline scenarios are as follows. There is much disagreement on the most intuitive configuration in any given scenario. Respondents often feel uncertain when confronted with unfamiliar scenarios, even when they are of simple to average complexity. When presented with an unfamiliar scenario, respondents will typically try to solve it by using the switches as a floor plan. They will try to match the layout of the switches to the layout of the lights, and larger switches will be assigned more or larger lights if it does not conflict with the layout. However, a significant portion of the respondents reasons differently, and thus there is not always a configuration that fits everyone.
 
 %Probably the most obvious question to ask about the augmented scenarios is what percentage of respondents answered correctly for each visualization. The answer to this question can be seen in Figure \ref{fig:preliminary_study_correctness}. This figure includes the baseline scenarios, where a correct solution is considered a solution that follows the consensus. One of the first things to notice here, is that every single visualization scored better results than the baseline scenarios, although the \textit{arcs} did only marginally so. \textit{Arcs} and \textit{lines} were both tested in the kitchen scenario, so the margin is much larger when compared to their own baseline. As for the best visualizations, every single respondent answered correctly for \textit{colors}, and \textit{switches on lights} is a close second with only one incorrect solution.
 
@@ -297,12 +297,3 @@ Our main conclusions from the baseline scenarios are as follows. There is much d
 
 
 %We will now look at the subjective experience of the respondents. The results of the five Nielsen dimensions that we used can be seen in Figures \ref{fig:preliminary_study_easy_to_learn}, \ref{fig:preliminary_study_fast_to_work_with}, \ref{fig:preliminary_study_resistant_to_errors}, \ref{fig:preliminary_study_useful} and \ref{fig:preliminary_study_enjoyable}. A first thing to notice is that the top three in all five dimensions is the same: first \textit{colors}, second \textit{switches on lights} and third \textit{lights on switches}.
-
-
-
-\begin{figure}
-    \centering
-    \includegraphics[width=1.0\linewidth]{exploration/results.png}
-    \caption{Results of the five.}
-    \label{fig:explor:lights_on_switches_vis}
-\end{figure}
